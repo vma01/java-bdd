@@ -1,0 +1,14 @@
+# IntelliJ related dir's/files
+*.iml
+*.ipr
+*.iws
+.idea/
+build/
+out/
+*.allure
+
+# Java related dir'sfiles
+*.class
+*.jar
+*.war
+*.ear
