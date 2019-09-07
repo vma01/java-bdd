@@ -1,6 +1,6 @@
-Feature: Submit data to webdriveruniversity.com using contact us form
+Feature: Submit data to webdriverUniversity web site using contact us form
   Scenario: Submit valid date via contact form
-    Given I access webdriveruniversity contact us form
+    Given I access webdriverUniversity contact us form
     When I enter a valid firstName
     And I enter a valid lastName
     | woods | jackson | jones |
