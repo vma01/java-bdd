@@ -6,5 +6,5 @@ Feature: Product page validation
 
     Examples:
     |           textLink          |         button           |
-    |  PAGE OBJECT MODEL   | container-special-offers |
+    |  PAGE OBJECT MODEL          | container-special-offers |
 

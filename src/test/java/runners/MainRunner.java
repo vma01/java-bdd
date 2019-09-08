@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {"src/test/java/resources/feature"},
-        glue = {"CucumberFramework.steps"},
+        glue = {"CucumberFramework.stepsDefinitions", "CucumberFramework.ui.factory.BaseUIClass.setUpBrowser"},
         monochrome = true,
         tags = {},
         plugin = {"pretty", "html:target/cucumber-html-report",

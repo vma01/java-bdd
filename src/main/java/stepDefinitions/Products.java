@@ -1,13 +1,19 @@
 package stepDefinitions;
 
-import cucumber.api.PendingException;
+import com.codeborne.selenide.Configuration;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import ui.factory.BaseUIClass;
 import ui.factory.MainPage;
 
-public class Products extends BaseUIClass {
+public class Products {
+    @Before
+    public void setUpBrowser() {
+        Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+    }
+
     @Given("^user navigate to website and click on text \"([^\"]*)\"$")
     public void userNavigateToWebsiteAndClickOnText(String textLink) {
         MainPage.open()
