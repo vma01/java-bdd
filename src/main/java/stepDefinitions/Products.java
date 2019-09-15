@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import com.codeborne.selenide.Configuration;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,8 +17,8 @@ public class Products {
 
     @Given("^user navigate to website and click on text \"([^\"]*)\"$")
     public void userNavigateToWebsiteAndClickOnText(String textLink) {
-        MainPage.open()
-                .clickProductCard(textLink);
+//        MainPage.open()
+//                .clickProductCard(textLink);
     }
 
     @When("^user clicks on \"([^\"]*)\"$")
