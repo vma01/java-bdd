@@ -5,9 +5,12 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public abstract class ProductWebElements {
+public interface ProductWebElements {
+    default SelenideElement specialOffers(String locator) {
+        return $(By.id(""+ locator +""));
+    }
 
-    SelenideElement productCard(String selector) {
-        return $(By.className(selector));
+    default SelenideElement proceedButton() {
+        return $(By.xpath("//button[text()='Proceed']"));
     }
 }

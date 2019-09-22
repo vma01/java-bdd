@@ -5,6 +5,6 @@ Feature: Product page validation
     Then user should be presented with promo alert
 
     Examples:
-    |           textLink          |         button           |
-    |  PAGE OBJECT MODEL          | container-special-offers |
+      |           textLink                                                             |         button           |
+      |  http://www.webdriveruniversity.com/Page-Object-Model/products.html            | container-special-offers |
 

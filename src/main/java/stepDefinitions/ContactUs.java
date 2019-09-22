@@ -1,29 +1,22 @@
 package stepDefinitions;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
-import core.SiteOptions;
-import core.SiteUrlPath;
+import org.testng.Assert;
+import utils.DriverFactory;
+import utils.constant.SiteOption;
+import utils.constant.SiteUrlPath;
 import cucumber.api.DataTable;
-import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
 import ui.factory.ContactUsForm;
 
 import java.util.List;
 
-public class ContactUs {
+public class ContactUs extends DriverFactory {
     private ContactUsForm contactUsForm;
     private Faker faker = new Faker();
-
-    @Before
-    public void setUpBrowser() {
-        Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
-    }
 
     @Given("^I access webdriverUniversity contact us form$")
     public void iAccessWebdriverUniversityContactUsForm() {
@@ -60,6 +53,6 @@ public class ContactUs {
     @Then("^information should successfully be submitted via contact us form$")
     public void informationShouldSuccessfullyBeSubmittedViaContactUsForm() {
         String message = contactUsForm.verifySuccssesMessage().getText();
-        Assert.assertEquals("Invalid message after registration", SiteOptions.SUCCESSFUL_MESSAGE.getSiteOptions(), message);
+        Assert.assertEquals("Invalid message after registration", SiteOption.SUCCESSFUL_MESSAGE.getSiteOption(), message);
     }
 }
