@@ -53,6 +53,6 @@ public class ContactUs extends DriverFactory {
     @Then("^information should successfully be submitted via contact us form$")
     public void informationShouldSuccessfullyBeSubmittedViaContactUsForm() {
         String message = contactUsForm.verifySuccssesMessage().getText();
-        Assert.assertEquals("Invalid message after registration", SiteOption.SUCCESSFUL_MESSAGE.getSiteOption(), message);
+        Assert.assertEquals(SiteOption.SUCCESSFUL_MESSAGE.getSiteOption(), message, "Invalid message after registration");
     }
 }

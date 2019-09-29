@@ -3,8 +3,13 @@ package utils;
 import com.codeborne.selenide.Configuration;
 import utils.constant.BrowserType;
 
+import java.util.Map;
+
 public class DriverFactory {
-    public void setBrowserCapabilities(String browserType) {
+    public void setBrowserCapabilities() {
+        LoadProperties loadProperties = new LoadProperties();
+        Map<String, String> browserProperties = loadProperties.loadPropertiesFile("browser.properties");
+        String browserType = browserProperties.get("browser.name");
 
         if (BrowserType.CHROME.getDriver().equalsIgnoreCase(browserType)) {
             System.setProperty("webdriver.chrome.driver", BrowserType.CHROME.getDriver());
